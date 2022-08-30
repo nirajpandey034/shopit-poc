@@ -1,0 +1,58 @@
+export const offers = [
+  {
+    id: 1,
+    headerImg: "/logo192.png",
+    headerText: "Header Text 1",
+    price: "<b>Rs. 100</b>/month",
+    offerText: "Rs. 70 for first month",
+    mainFeature: "Best product available for purchase",
+    attributes: [
+      "<b>Multiple</b> latest features<br /><hr />",
+      "Fully Compatible<br /><hr />",
+      "Fully <b>backward-compatible</b><br /><hr />",
+      "Less <i>Bugs</i><br />",
+    ],
+  },
+  {
+    id: 2,
+    headerImg: "/apple.png",
+    headerText: "Header Text 2",
+    price: "<b>Rs. 200</b>/month",
+    offerText: "Rs. 170 for first month",
+    mainFeature: "Best product available for purchase",
+    attributes: [
+      "Healthiest Fruit<br /><hr />",
+      "Delicious<br /><hr />",
+      "<b>freshly delivered</b><br /><hr />",
+      "<i>Pocket friendly</i> product<br />",
+    ],
+  },
+  {
+    id: 3,
+    headerImg: "/apple.png",
+    headerText: "Header Text 3",
+    price: "<b>Rs. 1000</b>/month",
+    offerText: "Rs. 800 for first month",
+    mainFeature: "Best product available for purchase",
+    attributes: [
+      "Healthiest Fruit<br /><hr />",
+      "Most Delicious<br /><hr />",
+      "<b>freshly delivered</b><br /><hr />",
+      "<i>Premium</i> product<br />",
+    ],
+  },
+  {
+    id: 4,
+    headerImg: "/logo192.png",
+    headerText: "Header Text 4",
+    price: "<b>Rs. 1999</b>/month",
+    offerText: "Rs. 1888 for first month",
+    mainFeature: "Best product available for purchase",
+    attributes: [
+      "<b>Multiple</b> latest features<br /><hr />",
+      "Fully Compatible<br /><hr />",
+      "Fully <b>backward-compatible</b><br /><hr />",
+      "Premium <i>Features</i>",
+    ],
+  },
+];
