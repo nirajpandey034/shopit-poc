@@ -1,10 +1,11 @@
-import "./App.css";
-import React, { useReducer, useMemo } from "react";
-import { Routes, Route } from "react-router-dom";
-import Index from "./Components/Index";
-import Home from "./Components/Home";
-import Cart from "./Components/Cart/Cart";
-import { CartReducer, initialState } from "./Components/Cart/CartReducer";
+import './App.css';
+import React, { useReducer, useMemo } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Index from './Components/Index';
+import Home from './Components/Home';
+import Cart from './Components/Cart/Cart';
+import About from './Components/About';
+import { CartReducer, initialState } from './Components/Cart/CartReducer';
 
 const MyContext = React.createContext();
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Index />} />
           <Route path="shop" element={<Home />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="about" element={<About />} />
         </Routes>
       </div>
     </MyContext.Provider>

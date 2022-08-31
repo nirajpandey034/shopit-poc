@@ -31,8 +31,8 @@ function Navbar() {
             <div style={{ display: "flex", gap: "1rem", marginRight: "auto" }}>
               <Link to="/">Home</Link>
               <Link to="/shop">Shop</Link>
-              <Link to="#">About</Link>
-              <Link to="#">Contact Us</Link>
+              <Link to="/about">About</Link>
+              <Link to="/contact-us">Contact Us</Link>
             </div>
             <div
               style={{

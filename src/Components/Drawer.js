@@ -35,12 +35,12 @@ function DrawerComponent() {
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="#">About</Link>
+              <Link to="/about">About</Link>
             </ListItemText>
           </ListItem>
           <ListItem onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="#">Contact Us</Link>
+              <Link to="/contact-us">Contact Us</Link>
             </ListItemText>
           </ListItem>
         </List>
