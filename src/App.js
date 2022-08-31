@@ -10,8 +10,8 @@ import ContactUs from './Components/ContactUs';
 import ContextProvider from './Components/ContextProvider';
 function App() {
   return (
-    <ContextProvider>
-      <div className="App">
+    <div className="App">
+      <ContextProvider>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="shop" element={<Home />} />
@@ -19,8 +19,8 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact-us" element={<ContactUs />} />
         </Routes>
-      </div>
-    </ContextProvider>
+      </ContextProvider>
+    </div>
   );
 }
 

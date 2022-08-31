@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,14 +11,14 @@ function createData(itemName, quantity, price) {
   return { itemName, quantity, price };
 }
 
-let rows = [];
-
 export default function CartTable(props) {
+  const [rows, setRows] = useState([]);
   useEffect(() => {
-    rows = props.products?.map((prod) => {
+    let rows = props.products?.map((prod) => {
       return createData(prod?.name, prod?.quantity, prod?.price);
     });
-  }, [props.products]);
+    setRows(rows);
+  }, [props]);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -32,7 +32,7 @@ export default function CartTable(props) {
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.name}
+              key={row.itemName}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
