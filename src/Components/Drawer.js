@@ -9,10 +9,15 @@ import {
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import Badge from '@mui/material/Badge';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-function DrawerComponent() {
+import { useContext } from 'react';
+import { MyContext } from './ContextProvider';
+
+function DrawerComponent({ cartCount }) {
+  const { state } = useContext(MyContext);
   const [openDrawer, setOpenDrawer] = useState(false);
   let navigate = useNavigate();
   return (
@@ -59,7 +64,13 @@ function DrawerComponent() {
           ShopIt
         </Typography>
         <IconButton onClick={() => navigate('/cart')}>
-          <ShoppingBasketIcon style={{ color: 'white' }} />
+          {state?.products.length > 0 ? (
+            <Badge badgeContent={state?.products.length} color="secondary">
+              <ShoppingBasketIcon style={{ color: 'white' }} />
+            </Badge>
+          ) : (
+            <ShoppingBasketIcon style={{ color: 'white' }} />
+          )}
         </IconButton>
       </div>
     </>
