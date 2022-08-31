@@ -10,8 +10,17 @@ import Typography from "@mui/material/Typography";
 import { useContext } from 'react';
 import {MyContext } from '../ContextProvider';
 
+import {isProductInCart} from "../../util/OfferCard.util";
+
 function OfferCard(props) {
   const { state, dispatch } = useContext(MyContext);
+
+  const addToCart = () => {
+    if(!isProductInCart(state.products, props.data.id))
+      dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature, quantity: 1, price: 120 } });
+    else
+      dispatch({ type: "REMOVE_FROM_CART", payload: { id: props.data.id } });
+  }
   return (
     <Card
       sx={{
@@ -58,12 +67,12 @@ function OfferCard(props) {
       </CardContent>
       <CardActions sx={{ justifyContent: "center" }}>
         <Button
-          className="card-select-button"
+          className={!isProductInCart(state.products, props.data.id) ? "card-select-button" : "card-selected-button"}
           onClick={() => {
-            dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature, quantity: 1, price: 120 } });
+            addToCart();
           }}
         >
-          Select
+          {!isProductInCart(state.products, props.data.id) ? 'Select' : 'Selected'}
         </Button>
       </CardActions>
     </Card>

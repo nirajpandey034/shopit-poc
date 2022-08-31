@@ -8,13 +8,19 @@ export const CartReducer = (state = initialState, action) => {
       let products = state.products;
       if (
         !products.find((prod) => {
-          return prod.id === action.payload.id; //check whether product alreadt is already in cart
+          return prod.id === action.payload.id; //check whether product is already in cart
         })
       ) {
         products.push(action.payload);
         return { products: products };
       }
       return state;
+    }
+    case 'REMOVE_FROM_CART': {
+      let products = state.products;
+
+      let newProducts = products.filter((ele) => ele.id !== action.payload.id);
+      return { products: newProducts };
     }
     default: {
       return state;

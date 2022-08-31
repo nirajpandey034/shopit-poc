@@ -26,3 +26,11 @@ export const dataFormatter = (data) => {
   });
   return finalData;
 };
+
+export const isProductInCart = (productList, productId) => {
+  if(productList.length === 0) return false;
+  if(productList.find((prod)=>{return prod.id === productId}))
+    return true;
+  else 
+    return false;
+}
