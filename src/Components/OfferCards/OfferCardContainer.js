@@ -44,19 +44,36 @@ function OfferCardContainer() {
           }}
           loop={false}
           navigation
+          grabCursor={true}
+          centeredSlides={true}
+          centeredSlidesBounds={true}
+          slideToClickedSlide={true}
+          initialSlide={0}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
           onSwiper={(swiper) => {}}
           onSlideChange={() => {}}
         >
           <SwiperSlide key={1}>
-            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+            <Skeleton
+              variant="rounded"
+              height={500}
+              style={{ marginLeft: '1rem', marginRight: '1rem' }}
+            />
           </SwiperSlide>
           <SwiperSlide key={2}>
-            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+            <Skeleton
+              variant="rounded"
+              height={500}
+              style={{ marginLeft: '1rem', marginRight: '1rem' }}
+            />
           </SwiperSlide>
           <SwiperSlide key={3}>
-            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+            <Skeleton
+              variant="rounded"
+              height={500}
+              style={{ marginLeft: '1rem', marginRight: '1rem' }}
+            />
           </SwiperSlide>
         </Swiper>
       ) : (

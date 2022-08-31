@@ -1,23 +1,16 @@
 import './App.css';
-import React, { useReducer, useMemo } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Index from './Components/Index';
 import Home from './Components/Home';
 import Cart from './Components/Cart/Cart';
 import About from './Components/About';
 import ContactUs from './Components/ContactUs';
-import { CartReducer, initialState } from './Components/Cart/CartReducer';
 
-const MyContext = React.createContext();
+import ContextProvider from './Components/ContextProvider';
 function App() {
-  const [state, dispatch] = useReducer(CartReducer, initialState);
-
-  const contextValue = useMemo(() => {
-    return { state, dispatch };
-  }, [state, dispatch]);
-
   return (
-    <MyContext.Provider value={contextValue}>
+    <ContextProvider>
       <div className="App">
         <Routes>
           <Route path="/" element={<Index />} />
@@ -27,9 +20,8 @@ function App() {
           <Route path="contact-us" element={<ContactUs />} />
         </Routes>
       </div>
-    </MyContext.Provider>
+    </ContextProvider>
   );
 }
 
 export default App;
-export { MyContext };

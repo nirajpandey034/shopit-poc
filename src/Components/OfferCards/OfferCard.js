@@ -7,7 +7,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
+import { useContext } from 'react';
+import {MyContext } from '../ContextProvider';
+
 function OfferCard(props) {
+  const { state, dispatch } = useContext(MyContext);
   return (
     <Card
       sx={{
@@ -56,7 +60,7 @@ function OfferCard(props) {
         <Button
           className="card-select-button"
           onClick={() => {
-            console.log(props.data.id);
+            dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature } });
           }}
         >
           Select
