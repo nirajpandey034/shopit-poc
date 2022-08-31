@@ -60,7 +60,7 @@ function OfferCard(props) {
         <Button
           className="card-select-button"
           onClick={() => {
-            dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature } });
+            dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature, quantity: 1, price: 120 } });
           }}
         >
           Select

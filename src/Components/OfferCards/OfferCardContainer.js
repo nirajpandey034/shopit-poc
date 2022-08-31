@@ -30,7 +30,7 @@ function OfferCardContainer() {
     <>
       {offerData.length === 0 ? (
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar]}
           breakpoints={{
             320: {
               slidesPerView: 1,
@@ -47,7 +47,7 @@ function OfferCardContainer() {
           grabCursor={true}
           centeredSlides={true}
           centeredSlidesBounds={true}
-          slideToClickedSlide={true}
+          slideToClickedSlide={false}
           initialSlide={0}
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
