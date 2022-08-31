@@ -15,9 +15,9 @@ import {isProductInCart} from "../../util/OfferCard.util";
 function OfferCard(props) {
   const { state, dispatch } = useContext(MyContext);
 
-  const addToCart = () => {
+  const addToCart = (quantity, price) => {
     if(!isProductInCart(state.products, props.data.id))
-      dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature, quantity: 1, price: 120 } });
+      dispatch({ type: "ADD_TO_CART", payload: { id: props.data.id, name: props.data.mainFeature, quantity: quantity, price: price } });
     else
       dispatch({ type: "REMOVE_FROM_CART", payload: { id: props.data.id } });
   }
@@ -50,7 +50,7 @@ function OfferCard(props) {
           </Typography>
         )}
         <Typography variant="h5" component="div"></Typography>
-        <Typography dangerouslySetInnerHTML={{ __html: props.data.price }} />
+        <Typography dangerouslySetInnerHTML={{ __html: props.data.displayPrice }} />
         <Typography sx={{ mb: 1.5 }} variant="body2" color="text.secondary">
           {props.data.offerText}
         </Typography>
@@ -69,7 +69,7 @@ function OfferCard(props) {
         <Button
           className={!isProductInCart(state.products, props.data.id) ? "card-select-button" : "card-selected-button"}
           onClick={() => {
-            addToCart();
+            addToCart(1, props.data.price);
           }}
         >
           {!isProductInCart(state.products, props.data.id) ? 'Select' : 'Selected'}

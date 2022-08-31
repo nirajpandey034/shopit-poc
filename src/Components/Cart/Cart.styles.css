@@ -1,0 +1,19 @@
+.clear-cart-button {
+    margin-top: 1rem !important;
+    background-color: rgb(244, 237, 237) !important;
+    color: black !important;
+    border-radius: 2rem !important;
+    width: 8rem !important;
+    text-transform: none !important;
+    margin-left: 1rem !important;
+}
+
+.checkout-button {
+    margin-top: 1rem !important;
+    background-color: rgb(102, 106, 234) !important;
+    color: white !important;
+    border-radius: 2rem !important;
+    width: 8rem !important;
+    text-transform: none !important;
+    margin-right: 1rem !important;
+}

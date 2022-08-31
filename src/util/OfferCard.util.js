@@ -5,6 +5,7 @@ export const dataFormatter = (data) => {
     let headerImg = ele.attributes.headerImg.data.attributes.url;
     let headerText = ele.attributes.headerText;
     let price = ele.attributes.price;
+    let displayPrice = `Rs.${ele.attributes.price}`;
     let offerText = ele.attributes.offerText;
     let mainFeature = ele.attributes.mainFeature;
 
@@ -20,6 +21,7 @@ export const dataFormatter = (data) => {
       attributes: attributes,
       headerText: headerText,
       price: price,
+      displayPrice: displayPrice,
       offerText: offerText,
       mainFeature: mainFeature,
     };

@@ -7,6 +7,7 @@ import Cart from './Components/Cart/Cart';
 import About from './Components/About';
 import ContactUs from './Components/ContactUs';
 import NavBar from './Components/NavBar';
+import Payment from './Components/Payment';
 
 import ContextProvider from './Components/ContextProvider';
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="about" element={<About />} />
           <Route path="contact-us" element={<ContactUs />} />
+          <Route path="payment" element={<Payment />} />
         </Routes>
       </ContextProvider>
     </div>
