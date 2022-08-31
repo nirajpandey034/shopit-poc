@@ -29,19 +29,36 @@ function OfferCardContainer() {
   return (
     <>
       {offerData.length === 0 ? (
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '2rem',
-            justifyContent: 'center',
-            marginTop: '1rem',
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
           }}
+          loop={false}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => {}}
+          onSlideChange={() => {}}
         >
-          <Skeleton variant="rounded" width={270} height={500} />
-          <Skeleton variant="rounded" width={270} height={500} />
-          <Skeleton variant="rounded" width={270} height={500} />
-        </div>
+          <SwiperSlide key={1}>
+            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+          </SwiperSlide>
+          <SwiperSlide key={2}>
+            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+          </SwiperSlide>
+          <SwiperSlide key={3}>
+            <Skeleton variant="rounded" height={500} style={{marginLeft:'1rem', marginRight:'1rem'}}/>
+          </SwiperSlide>
+        </Swiper>
       ) : (
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
