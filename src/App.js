@@ -5,6 +5,7 @@ import Index from './Components/Index';
 import Home from './Components/Home';
 import Cart from './Components/Cart/Cart';
 import About from './Components/About';
+import ContactUs from './Components/ContactUs';
 import { CartReducer, initialState } from './Components/Cart/CartReducer';
 
 const MyContext = React.createContext();
@@ -23,6 +24,7 @@ function App() {
           <Route path="shop" element={<Home />} />
           <Route path="cart" element={<Cart />} />
           <Route path="about" element={<About />} />
+          <Route path="contact-us" element={<ContactUs />} />
         </Routes>
       </div>
     </MyContext.Provider>

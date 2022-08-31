@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 function Banner() {
   return (
     <div className="banner-container">
-      <Typography>Carousel</Typography>
+      <Typography>Here goes the Carousel</Typography>
     </div>
   );
 }
